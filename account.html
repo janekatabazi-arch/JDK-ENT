@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JDK ENT - Account</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="menuSelect"></div>
+<div class="layout1">
+    <div class="navBar">
+        <img src="menu.png" alt="Menu" id="menu">
+        <h1 class="head">JDK ENT</h1>
+        <input type="text" id="getData" placeholder="Account">
+        <img src="search.png" alt="Search" id="submitSearch">
+    </div>
+    <main class="accountPage">
+        <h2 class="pageTitle">My Account</h2>
+        <section class="accountCard">
+            <div class="accountAvatar" id="accountInitial">J</div>
+            <h3 id="accountName">Guest Customer</h3>
+            <p id="accountPhone">No phone saved</p>
+            <p id="accountLocation">No delivery area saved</p>
+            <p id="authStatus" class="authStatus"></p><a href="settings.html" class="accountAction">Edit Customer Profile</a><a href="auth.html" id="authAction" class="accountAction accountAuthAction">Sign In / Create Account</a><button id="signOutBtn" class="accountAction accountSignOut" hidden>Sign Out</button>
+        </section>
+        <section class="accountCard">
+            <h3>Marketplace Activity</h3>
+            <div class="accountStats">
+                <div><strong id="orderCount">0</strong><span>Orders</span></div>
+                <div><strong id="guestId">Guest</strong><span>Session</span></div>
+            </div>
+            <a href="orders.html" class="accountAction">View My Orders</a>
+        </section>
+    </main>
+</div>
+<footer><ul class="footerTabs"><li class="list"><a href="index.html">Home</a></li><li class="list"><a href="categories.html">Categories</a></li><li class="list"><a href="messages.html">Message</a></li><li class="list"><a href="cart.html">Cart</a></li><li class="list"><a href="about.html">About</a></li><li class="list"><a href="support.html">Support</a></li></ul></footer>
+<script src="script.js"></script>
+<script src="store.js"></script>
+<script src="data.js"></script>
+<script src="account.js"></script>
+</body>
+</html>

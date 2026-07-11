@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>JDK ENTERPRISES - Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="menuSelect"></div>
+
+<div class="layout1" id="layout1">
+
+    <div class="navBar">
+
+        <img
+            src="menu.png"
+            alt="Menu"
+            id="menu"
+        >
+
+        <h1 class="head">JDK ENT</h1>
+
+        <input
+            type="text"
+            id="getData"
+            placeholder="Search........."
+        >
+
+        <img
+            src="search.png"
+            alt="Search"
+            id="submitSearch"
+        >
+
+    </div>
+
+
+    <main class="settingsPage">
+
+        <h2 class="pageTitle">
+            Settings
+        </h2>
+
+
+        <section class="settingsCard">
+
+            <h3>Appearance</h3>
+
+            <div class="settingRow">
+
+                <div>
+
+                    <h4>Dark Mode</h4>
+
+                    <p>
+                        Change the application appearance.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="darkMode"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <section class="settingsCard">
+
+            <h3>Notifications</h3>
+
+            <div class="settingRow">
+
+                <div>
+
+                    <h4>Order Notifications</h4>
+
+                    <p>
+                        Receive updates about your orders.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="orderNotifications"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="settingRow">
+
+                <div>
+
+                    <h4>Message Notifications</h4>
+
+                    <p>
+                        Receive new message alerts.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="messageNotifications"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <section class="settingsCard">
+
+            <h3>Shopping</h3>
+
+            <div class="settingRow">
+
+                <div>
+
+                    <h4>Currency</h4>
+
+                    <p>
+                        Default shopping currency.
+                    </p>
+
+                </div>
+
+                <select
+                    id="currencySetting"
+                    class="settingSelect"
+                >
+
+                    <option value="UGX">
+                        UGX
+                    </option>
+
+                    <option value="USD">
+                        USD
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <section class="settingsCard"><h3>Customer Profile</h3><div class="profileFields"><input id="profileName" class="settingInput" placeholder="Your name"><input id="profilePhone" class="settingInput" placeholder="Phone number"><input id="profileLocation" class="settingInput" placeholder="Delivery area"><button id="saveProfileBtn" class="settingActionBtn">Save Profile</button></div></section><section class="settingsCard"><h3>Orders</h3><a href="orders.html" class="settingsLinkBtn">View My Orders</a></section><section class="settingsCard dangerSettings">
+
+            <h3>Application Data</h3>
+
+            <button
+                id="clearCartBtn"
+                class="settingActionBtn"
+            >
+                Clear Shopping Cart
+            </button>
+
+            <button
+                id="clearMessagesBtn"
+                class="settingActionBtn"
+            >
+                Clear Messages
+            </button>
+
+            <button
+                id="resetAppBtn"
+                class="dangerBtn"
+            >
+                Reset Application
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<footer>
+
+    <ul class="footerTabs">
+
+        <li class="list">
+            <a href="index.html">Home</a>
+        </li>
+
+        <li class="list">
+            <a href="categories.html">Categories</a>
+        </li>
+
+        <li class="list">
+            <a href="messages.html">Message</a>
+        </li>
+
+        <li class="list">
+            <a href="cart.html">Cart</a>
+        </li>
+
+        <li class="list">
+            <a href="about.html">About</a>
+        </li>
+
+        <li class="list">
+            <a href="support.html">Support</a>
+        </li>
+
+    </ul>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="store.js"></script>
+<script src="data.js"></script>
+<script src="settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>JDK ENTERPRISES - Checkout</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="menuSelect"></div>
+
+<div class="layout1" id="layout1">
+
+    <div class="navBar" id="navBar">
+
+        <img src="menu.png" alt="Menu" id="menu">
+
+        <h1 class="head">JDK ENT</h1>
+
+        <input
+            type="text"
+            id="getData"
+            placeholder="Search........."
+        >
+
+        <img
+            src="search.png"
+            alt="Search"
+            id="submitSearch"
+        >
+
+    </div>
+
+
+    <main class="checkoutPage">
+
+        <h2 class="pageTitle">
+            Checkout
+        </h2>
+
+
+        <div class="checkoutLayout">
+
+            <section class="checkoutCard">
+
+                <h3>Delivery Information</h3>
+
+                <form id="checkoutForm">
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        class="checkoutInput"
+                        placeholder="Full Name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        class="checkoutInput"
+                        placeholder="Phone Number"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="customerLocation"
+                        class="checkoutInput"
+                        placeholder="Delivery Location"
+                        required
+                    >
+
+                    <textarea
+                        id="customerNote"
+                        class="checkoutMessage"
+                        placeholder="Delivery note (optional)"
+                    ></textarea>
+
+
+                    <h3 class="paymentTitle">
+                        Payment Method
+                    </h3>
+
+                    <label class="paymentOption">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Mobile Money"
+                            required
+                        >
+
+                        Mobile Money
+
+                    </label>
+
+
+                    <label class="paymentOption">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Cash on Delivery"
+                        >
+
+                        Cash on Delivery
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="placeOrderBtn"
+                    >
+                        Place Order
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <section class="checkoutCard">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkoutProducts"></div>
+
+                <div class="checkoutTotal">
+
+                    <h2 id="checkoutTotal">
+                        Total: UGX 0
+                    </h2>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<footer>
+
+    <ul class="footerTabs">
+
+        <li class="list">
+            <a href="index.html">Home</a>
+        </li>
+
+        <li class="list">
+            <a href="categories.html">Categories</a>
+        </li>
+
+        <li class="list">
+            <a href="messages.html">Message</a>
+        </li>
+
+        <li class="list">
+            <a href="cart.html">Cart</a>
+        </li>
+
+        <li class="list">
+            <a href="about.html">About</a>
+        </li>
+
+        <li class="list">
+            <a href="support.html">Support</a>
+        </li>
+
+    </ul>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="store.js"></script>
+<script src="data.js"></script>
+<script src="checkout.js"></script>
+
+</body>
+
+</html>

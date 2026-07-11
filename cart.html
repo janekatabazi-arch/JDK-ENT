@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>JDK ENTERPRISES - Cart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="menuSelect"></div>
+
+<div class="layout1" id="layout1">
+
+    <!-- NAVIGATION BAR -->
+
+    <div class="navBar" id="navBar">
+
+        <img
+            src="menu.png"
+            alt="Menu"
+            id="menu"
+        >
+
+        <h1 class="head">
+            JDK ENT
+        </h1>
+
+        <input
+            type="text"
+            id="getData"
+            placeholder="Search........."
+        >
+
+        <img
+            src="search.png"
+            alt="Search"
+            id="submitSearch"
+        >
+
+    </div>
+
+
+    <!-- CART CONTENT -->
+
+    <main class="cartPage">
+
+        <h2 class="pageTitle">
+            Shopping Cart
+        </h2>
+
+
+        <!-- CART PRODUCTS -->
+
+        <div id="cartContainer">
+
+        </div>
+
+
+        <!-- CART SUMMARY -->
+
+        <div class="cartSummary">
+
+            <h3 id="totalPrice">
+                Grand Total: UGX 0
+            </h3>
+
+            <button
+                class="checkoutBtn"
+                id="checkoutBtn"
+            >
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <ul class="footerTabs">
+
+        <li class="list">
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </li>
+
+        <li class="list">
+
+            <a href="categories.html">
+                Categories
+            </a>
+
+        </li>
+
+        <li class="list">
+
+            <a href="messages.html">
+                Message
+            </a>
+
+        </li>
+
+        <li class="list">
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </li>
+
+        <li class="list">
+
+            <a href="about.html">
+                About
+            </a>
+
+        </li>
+
+        <li class="list">
+
+            <a href="support.html">
+                Support
+            </a>
+
+        </li>
+
+    </ul>
+
+</footer>
+
+
+<script src="currency.js"></script>
+<script src="script.js"></script>
+<script src="cart.js"></script>
+
+
+</body>
+
+</html>
