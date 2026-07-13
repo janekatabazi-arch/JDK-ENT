@@ -32,9 +32,10 @@ function openMenu() {
 
             <div
                 class="menuList"
-                data-page="about.html"
+                data-page="auth.html">Account</div><div class="menuList" data-page="about.html"
             >
-                About
+                Account
+About
             </div>
 
             <div
