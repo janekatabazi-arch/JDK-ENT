@@ -1,0 +1,74 @@
+[
+  {
+    "id": "phone-001",
+    "name": "Smart Phone",
+    "price": 950000,
+    "image": "phone.jpg",
+    "category": "electronics",
+    "type": "product",
+    "description": "A quality smartphone for everyday communication and entertainment.",
+    "stock": 10,
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": "laptop-001",
+    "name": "Laptop",
+    "price": 1850000,
+    "image": "laptop.jpg",
+    "category": "electronics",
+    "type": "product",
+    "description": "A dependable laptop for study, office work and everyday tasks.",
+    "stock": 8,
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": "speaker-001",
+    "name": "Bluetooth Speaker",
+    "price": 120000,
+    "image": "speaker.jpg",
+    "category": "electronics",
+    "type": "product",
+    "description": "Portable wireless audio for home and travel.",
+    "stock": 20,
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": "rice-001",
+    "name": "Rice 5kg",
+    "price": 45000,
+    "image": "rice.jpg",
+    "category": "groceries",
+    "type": "product",
+    "description": "A 5kg pack of rice for everyday meals.",
+    "stock": 30,
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": "chair-001",
+    "name": "Plastic Chair",
+    "price": 35000,
+    "image": "chair.jpg",
+    "category": "furniture",
+    "type": "product",
+    "description": "A practical lightweight chair for home or events.",
+    "stock": 25,
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": "cement-001",
+    "name": "Cement 50kg",
+    "price": 42000,
+    "image": "cement.jpg",
+    "category": "building",
+    "type": "product",
+    "description": "50kg bag of cement for construction projects.",
+    "stock": 50,
+    "sizes": [],
+    "colors": []
+  }
+]

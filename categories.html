@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shop products and marketplace services with JDK Enterprises in Uganda.">
+    <title>JDK Enterprises - Categories</title>
+<meta name="theme-color" content="#8d101a">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="jdkSkipLink" href="#layout1">Skip to main content</a>
+
+<div id="menuSelect"></div>
+
+<div class="layout1" id="layout1" tabindex="-1">
+
+    
+    <div class="navBar" id="navBar">
+        <img src="menu.png" alt="Menu" id="menu">
+
+        <h1 class="head">JDK ENT</h1>
+
+        <input
+            type="text"
+            id="getData"
+            placeholder="Search.........">
+
+        <img
+            src="search.png"
+            alt="Search"
+            id="submitSearch">
+    </div>
+
+    
+    <div class="semiNav">
+
+        <ul class="ul">
+
+            <li class="li" id="all">All</li>
+
+            <li class="li" id="electronics">Electronics</li>
+
+            <li class="li" id="groceries">Groceries</li>
+
+            <li class="li" id="furniture">Furniture</li>
+
+            <li class="li" id="workers">Manual Workers</li>
+
+            <li class="li" id="building">Building Materials</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="contentDisplay">
+
+        <div class="sectionHeader">
+
+            <h2 id="categoryTitle">All Products</h2>
+
+            <select id="sortProducts" class="sortBox">
+
+                <option value="popular">
+                    Sort by: Popular
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="products" id="products">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    <ul class="footerTabs">
+
+        <li class="list">
+            <a href="index.html">Home</a>
+        </li>
+
+        <li class="list">
+            <a href="categories.html">Categories</a>
+        </li>
+
+        <li class="list">
+            <a href="messages.html">Message</a>
+        </li>
+
+        <li class="list">
+            <a href="cart.html">Cart</a>
+        </li>
+
+        <li class="list">
+            <a href="about.html">About</a>
+        </li>
+
+        <li class="list">
+            <a href="support.html">Support</a>
+        </li>
+
+    </ul>
+
+</footer>
+
+<script src="currency.js"></script>
+<script src="script.js"></script>
+<script src="ui.js"></script>
+<script src="store.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="backend.js"></script>
+<script src="spark-backend.js"></script>
+<script src="app-security.js"></script>
+<script src="data.js"></script>
+<script src="discovery.js"></script>
+<script src="deals.js"></script>
+<script src="categories.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<meta name="description" content="Shop products and marketplace services with JDK Enterprises in Uganda.">
+
+    <title>JDK Enterprises - Reviews</title>
+<meta name="theme-color" content="#8d101a">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<a class="jdkSkipLink" href="#jdkMain">Skip to main content</a>
+
+<div id="menuSelect"></div>
+
+<div class="layout1" id="layout1">
+
+    <div class="navBar">
+
+        <img
+            src="menu.png"
+            alt="Menu"
+            id="menu"
+        >
+
+        <h1 class="head">JDK ENT</h1>
+
+        <input
+            type="text"
+            id="getData"
+            placeholder="Search reviews..."
+        >
+
+        <img
+            src="search.png"
+            alt="Search"
+            id="submitSearch"
+        >
+
+    </div>
+
+
+    <main id="jdkMain" class="reviewsPage">
+
+        <h2 class="pageTitle">
+            Ratings & Reviews
+        </h2>
+
+
+        <section class="ratingSummary">
+
+            <div>
+
+                <h1 id="averageRating">
+                    0.0
+                </h1>
+
+                <div
+                    class="summaryStars"
+                    id="summaryStars"
+                >
+                    ☆☆☆☆☆
+                </div>
+
+                <p id="reviewCount">
+                    0 Reviews
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="reviewFormCard">
+
+            <h3>Marketplace review policy</h3>
+
+            
+
+
+            
+
+
+            <p>Product ratings on JDK Enterprises are tied to delivered orders. Open a purchased product from the marketplace to submit one verified review.</p><a class="submitReviewBtn reviewBrowseLink" href="categories.html">Browse products</a>
+
+        </section>
+
+
+        <section>
+
+            <h2 class="reviewSectionTitle">
+                Customer Reviews
+            </h2>
+
+            <div id="reviewsContainer"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<footer>
+
+    <ul class="footerTabs">
+
+        <li class="list">
+            <a href="index.html">Home</a>
+        </li>
+
+        <li class="list">
+            <a href="categories.html">Categories</a>
+        </li>
+
+        <li class="list">
+            <a href="messages.html">Message</a>
+        </li>
+
+        <li class="list">
+            <a href="cart.html">Cart</a>
+        </li>
+
+        <li class="list">
+            <a href="about.html">About</a>
+        </li>
+
+        <li class="list">
+            <a href="support.html">Support</a>
+        </li>
+
+    </ul>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="ui.js"></script>
+<script src="store.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="backend.js"></script>
+<script src="spark-backend.js"></script>
+<script src="app-security.js"></script>
+<script src="reviews.js"></script>
+
+</body>
+
+</html>

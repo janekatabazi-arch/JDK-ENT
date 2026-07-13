@@ -1,0 +1,20 @@
+(async function () {
+  if (window.JDKBackend) await JDKBackend.waitForAuth();
+  const customer = JDKCustomer.get();
+  const session = JDKStore.session.ensure();
+  document.getElementById("accountName").textContent = customer.name || "Guest Customer";
+  document.getElementById("accountPhone").textContent = customer.phone || "No phone saved";
+  document.getElementById("accountLocation").textContent = customer.location || "No delivery area saved";
+  document.getElementById("accountInitial").textContent = (customer.name || "J").charAt(0).toUpperCase();
+  document.getElementById("guestId").textContent = session.guestId.slice(-6);
+  const authUser = JDKStore.auth.getUser(); const signedIn = JDKStore.auth.isSignedIn();
+  const authStatus = document.getElementById("authStatus"); const authAction = document.getElementById("authAction"); const signOutBtn = document.getElementById("signOutBtn");
+  authStatus.textContent = signedIn ? "Signed in as " + (authUser.email || authUser.id) : "Browsing as a guest";
+  authAction.hidden = signedIn; signOutBtn.hidden = !signedIn;
+  const adminAction = document.getElementById("adminAction");
+  if (adminAction && signedIn && JDKBackend.isConnected()) adminAction.hidden = !await JDKBackend.isAdmin().catch(() => false);
+  signOutBtn.addEventListener("click", async () => { await JDKBackend.signOut(); location.reload(); });
+  const backendStatus = document.getElementById("backendStatus"); if (backendStatus) backendStatus.textContent = JDKBackend.isConnected() ? "Firebase connected" : "Firebase configuration required";
+  const orders = signedIn ? await JDKBackend.getOrders().catch(() => JDKOrders.getAll()) : JDKOrders.getAll();
+  document.getElementById("orderCount").textContent = orders.length;
+})();

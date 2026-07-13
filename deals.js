@@ -1,0 +1,20 @@
+/* JDK Enterprises v20 — storefront campaign presentation and deal discovery */
+(function () {
+  const Deal = {
+    promotions: [], ready: Promise.resolve([]),
+    live(p, now = Date.now()) { const start=Date.parse(p.startsAt), end=Date.parse(p.endsAt); return p.status === "active" && Number.isFinite(start) && Number.isFinite(end) && start <= now && end > now; },
+    discount(p, subtotal) { subtotal=Number(subtotal||0); if(subtotal < Number(p.minimumSpend||0)) return 0; const raw=p.discountType === "percent" ? Math.round(subtotal*Number(p.discountValue||0)/100) : Number(p.discountValue||0); return Math.max(0,Math.min(subtotal,raw)); },
+    automaticFor(item) { return this.promotions.filter(p=>this.live(p)&&p.mode==="automatic"&&(!p.sellerId||p.sellerId===item.sellerId)).map(p=>({promotion:p,discount:this.discount(p,Number(item.price||0))})).filter(x=>x.discount>0).sort((a,b)=>b.discount-a.discount)[0]||null; },
+    price(item) { const deal=this.automaticFor(item), original=Number(item.price||0); return { original, final:Math.max(0,original-Number(deal?.discount||0)), deal }; },
+    label(p) { return p.discountType === "percent" ? `${Number(p.discountValue)}% OFF` : `${typeof formatPrice === "function" ? formatPrice(p.discountValue) : "UGX "+Number(p.discountValue).toLocaleString()} OFF`; },
+    async load() { if(!window.JDKBackend?.db) return []; try { const snap=await JDKBackend.db.collection("promotions").where("status","==","active").get(); this.promotions=snap.docs.map(d=>({id:d.id,...d.data()})).filter(p=>this.live(p)); window.dispatchEvent(new CustomEvent("jdk:deals-ready",{detail:this.promotions})); return this.promotions; } catch(e){ console.warn("JDK deals unavailable:",e.message); return []; } },
+    coupons() { return this.promotions.filter(p=>this.live(p)&&p.mode==="coupon"&&p.code); },
+    featured() { const recent=(window.JDKDiscovery?.recentlyViewed?.(12)||[]), sellerIds=new Set(recent.map(i=>i.sellerId).filter(Boolean)); return [...this.promotions].filter(p=>this.live(p)).sort((a,b)=>Number(sellerIds.has(b.sellerId))-Number(sellerIds.has(a.sellerId)) || Date.parse(a.endsAt)-Date.parse(b.endsAt)); },
+    countdown(end) { const ms=Math.max(0,Date.parse(end)-Date.now()), d=Math.floor(ms/86400000), h=Math.floor(ms%86400000/3600000), m=Math.floor(ms%3600000/60000), s=Math.floor(ms%60000/1000); return d ? `${d}d ${h}h ${m}m` : `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`; },
+    mountBanner() { const host=document.querySelector(".contentDisplay")||document.querySelector("main"); if(!host||document.getElementById("jdkDealBanner"))return; const p=this.featured()[0]; if(!p)return; const el=document.createElement("section"); el.id="jdkDealBanner"; el.className="dealBanner"; el.innerHTML=`<div><span class="dealKicker">${p.mode==="coupon"?"COUPON DROP":"LIMITED-TIME DEAL"}</span><h2>${JDKUI.escapeHTML(p.name||"JDK Marketplace Deal")}</h2><p>${this.label(p)}${p.minimumSpend?` · Min. ${formatPrice(p.minimumSpend)}`:""}</p></div><div class="dealBannerAction"><strong data-deal-countdown="${JDKUI.escapeHTML(p.endsAt)}">${this.countdown(p.endsAt)}</strong>${p.code?`<button type="button" data-copy-coupon="${JDKUI.escapeHTML(p.code)}">Copy ${JDKUI.escapeHTML(p.code)}</button>`:`<a href="categories.html">Shop deals</a>`}</div>`; host.prepend(el); this.bind(el); },
+    bind(root=document) { root.querySelectorAll("[data-copy-coupon]").forEach(btn=>btn.onclick=async()=>{ const code=btn.dataset.copyCoupon; try{await navigator.clipboard.writeText(code);}catch{localStorage.setItem("jdkPendingCoupon",code);} localStorage.setItem("jdkPendingCoupon",code); JDKUI.toast(`Coupon ${code} ready for checkout`); }); },
+    tick() { document.querySelectorAll("[data-deal-countdown]").forEach(el=>el.textContent=this.countdown(el.dataset.dealCountdown)); }
+  };
+  window.JDKDeals=Deal;
+  window.addEventListener("DOMContentLoaded",()=>{ Deal.ready=JDKBackend?.waitForAuth?.().then(()=>Deal.load()).then(()=>{Deal.mountBanner();Deal.tick();setInterval(()=>Deal.tick(),1000);return Deal.promotions;}); });
+})();

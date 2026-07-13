@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<meta name="description" content="Shop products and marketplace services with JDK Enterprises in Uganda.">
+
+    <title>JDK Enterprises - Checkout</title>
+<meta name="theme-color" content="#8d101a">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<a class="jdkSkipLink" href="#jdkMain">Skip to main content</a>
+
+<div id="menuSelect"></div>
+
+<div class="layout1" id="layout1">
+
+    <div class="navBar" id="navBar">
+
+        <img src="menu.png" alt="Menu" id="menu">
+
+        <h1 class="head">JDK ENT</h1>
+
+        <input
+            type="text"
+            id="getData"
+            placeholder="Search........."
+        >
+
+        <img
+            src="search.png"
+            alt="Search"
+            id="submitSearch"
+        >
+
+    </div>
+
+
+    <main id="jdkMain" class="checkoutPage">
+
+        <h2 class="pageTitle">
+            Checkout
+        </h2>
+
+
+        <div class="checkoutLayout">
+
+            <section class="checkoutCard">
+
+                <h3>Delivery Information</h3>
+
+                <form id="checkoutForm">
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        class="checkoutInput"
+                        placeholder="Full Name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        class="checkoutInput"
+                        placeholder="Phone Number"
+                        required
+                    >
+
+                    <div class="logisticsPanel">
+                        <label><strong>Fulfilment method</strong></label>
+                        <div class="deliveryMethodTabs">
+                            <label><input type="radio" name="deliveryMethod" value="delivery" checked> Delivery</label>
+                            <label><input type="radio" name="deliveryMethod" value="pickup"> Pickup</label>
+                        </div>
+
+                        <div id="deliveryFields">
+                            <label for="savedAddress">Saved address</label>
+                            <select id="savedAddress" class="checkoutInput"><option value="">Enter a new address</option></select>
+                            <input type="text" id="customerLocation" class="checkoutInput" placeholder="Delivery address / landmark" required>
+                            <select id="deliveryZone" class="checkoutInput" required><option value="">Loading delivery zones...</option></select>
+                            <div id="deliveryEstimate" class="deliveryEstimate"></div>
+                            <label class="saveAddressCheck"><input type="checkbox" id="saveAddress"> Save this address to my address book</label>
+                            <input type="text" id="addressLabel" class="checkoutInput" placeholder="Address label, e.g. Home" hidden>
+                        </div>
+
+                        <div id="pickupFields" hidden>
+                            <select id="pickupPoint" class="checkoutInput"><option value="">Loading pickup points...</option></select>
+                            <div id="pickupEstimate" class="deliveryEstimate"></div>
+                        </div>
+                    </div>
+
+                    <textarea
+                        id="customerNote"
+                        class="checkoutMessage"
+                        placeholder="Delivery note (optional)"
+                    ></textarea>
+
+
+                    <h3 class="paymentTitle">
+                        Payment Method
+                    </h3>
+
+                    <label class="paymentOption">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="mobile-money"
+                            required
+                        >
+
+                        Mobile Money
+
+                    </label>
+
+                    <div id="mobileMoneyOptions" class="mobileMoneyOptions" hidden>
+                        <label for="mobileMoneyProvider">Mobile Money network</label>
+                        <select id="mobileMoneyProvider" class="checkoutInput">
+                            <option value="">Choose network</option>
+                            <option value="mtn">MTN MoMo</option>
+                            <option value="airtel">Airtel Money</option>
+                        </select>
+                        <small>Live collection is disabled until a licensed payment provider is connected on the server.</small>
+                    </div>
+
+
+                    <label class="paymentOption">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cash"
+                        >
+
+                        Cash on Delivery
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="placeOrderBtn"
+                    >
+                        Place Order
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <section class="checkoutCard">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkoutProducts"></div>
+
+                <div class="sellerPanel" style="margin:16px 0"><label for="couponCode"><strong>Coupon code</strong></label><div class="adminPaymentActions"><input id="couponCode" maxlength="40" placeholder="e.g. JDKSAVE10"><small>Validated securely when the order is created.</small></div></div>
+                <div class="checkoutTotal">
+
+                    <h2 id="checkoutTotal">
+                        Total: UGX 0
+                    </h2>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<footer>
+
+    <ul class="footerTabs">
+
+        <li class="list">
+            <a href="index.html">Home</a>
+        </li>
+
+        <li class="list">
+            <a href="categories.html">Categories</a>
+        </li>
+
+        <li class="list">
+            <a href="messages.html">Message</a>
+        </li>
+
+        <li class="list">
+            <a href="cart.html">Cart</a>
+        </li>
+
+        <li class="list">
+            <a href="about.html">About</a>
+        </li>
+
+        <li class="list">
+            <a href="support.html">Support</a>
+        </li>
+
+    </ul>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="ui.js"></script>
+<script src="store.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-functions-compat.js"></script><script src="firebase-config.js"></script>
+<script src="backend.js"></script>
+<script src="spark-backend.js"></script>
+<script src="app-security.js"></script>
+<script src="data.js"></script>
+<script src="deals.js"></script>
+<script src="checkout.js"></script>
+
+</body>
+
+</html>

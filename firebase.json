@@ -1,0 +1,13 @@
+{
+  "firestore": { "rules": "firestore.rules", "indexes": "firestore.indexes.json" },
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", ".firebaserc", ".firebaserc.example", "**/.*", "**/node_modules/**", "functions/**", "scripts/**", "test/**", "package.json", "package-lock.json", "firestore.rules", "firestore.indexes.json", "storage.rules", "*.md", "*.zip"],
+    "cleanUrls": false,
+    "trailingSlash": false,
+    "headers": [
+      { "source": "**/*.@(js|css)", "headers": [{"key":"Cache-Control","value":"public, max-age=3600"}] },
+      { "source": "**/*.@(jpg|jpeg|png|webp|svg)", "headers": [{"key":"Cache-Control","value":"public, max-age=86400"}] }
+    ]
+  }
+}

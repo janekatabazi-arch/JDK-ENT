@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shop products and marketplace services with JDK Enterprises in Uganda.">
+
+    <title>JDK Enterprises - Chat</title>
+<meta name="theme-color" content="#8d101a">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<a class="jdkSkipLink" href="#jdkMain">Skip to main content</a>
+
+<div class="chatPage">
+
+    <header class="chatHeader">
+
+        <button
+            id="backChat"
+            class="chatBackBtn">
+            ←
+        </button>
+
+        <img
+            id="chatImage"
+            class="chatProfile"
+            alt="Profile">
+
+        <div>
+
+            <h3 id="chatName">
+                Chat
+            </h3>
+
+            <span id="chatStatus">Connecting...</span>
+            <button id="escalateChat" class="chatEscalate" type="button">Request JDK Support</button>
+
+        </div>
+
+    </header>
+
+
+    <main
+        class="chatMessages"
+        id="chatMessages">
+    </main>
+
+
+    <div class="chatInputArea">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Type a message...">
+
+        <button id="sendMessage">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="ui.js"></script>
+<script src="store.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-functions-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="backend.js"></script>
+<script src="spark-backend.js"></script>
+<script src="app-security.js"></script>
+<script src="chat.js"></script>
+
+</body>
+
+</html>

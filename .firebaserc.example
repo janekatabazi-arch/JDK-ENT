@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "development": "jdk-enterprises-dev",
+    "production": "jdk-enterprises-prod"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name":"jdk-enterprises-spark-launch","private":true,"version":"31.0.0",
+  "scripts":{"syntax:check":"node scripts/release-check.js","deploy":"firebase deploy --only firestore:rules,firestore:indexes,hosting"},
+  "devDependencies":{"firebase-tools":"^14.0.0"}
+}
